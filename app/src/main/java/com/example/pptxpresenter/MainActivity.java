@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
 //                .build();
         sharedPref = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE);
         user = sharedPref.getString(getString(R.string.user_name_key), "None");
-        serverUrl = sharedPref.getString(getString(R.string.server_url_key), "http://192.168.0.111:10050/");
+        serverUrl = sharedPref.getString(getString(R.string.server_url_key), "None");
         if (!URLUtil.isValidUrl(serverUrl)) {
             serverUrl = "http://127.0.0.1:10050/";
         }
