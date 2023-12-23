@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PPTX Presenter</string>
     <string name="prev_button_caption">prevButton</string>
     <string name="next_button_caption">nextButton</string>
     <string name="state">State</string>
