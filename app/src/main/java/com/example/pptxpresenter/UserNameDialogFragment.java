@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.pptxpresenter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,10 +11,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.view.LayoutInflaterCompat;
 import androidx.fragment.app.DialogFragment;
-
-import java.util.Objects;
 
 public class UserNameDialogFragment extends DialogFragment {
     public interface UserNameDialogListener {
