@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="prev_button_caption">prevButton</string>
+    <string name="next_button_caption">nextButton</string>
+    <string name="state">State</string>
+    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialog_caption">Settings</string>
+    <string name="name">Name</string>
+    <string name="server_url">Server URL</string>
+    <string name="preference_file_key">settings</string>
+    <string name="user_name_key">userName</string>
+    <string name="server_url_key">serverUrl</string>
+</resources>
