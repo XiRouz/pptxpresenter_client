@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
 
                     @Override
                     public void onFailure(Call<ServerAns> call, Throwable t) {
+                        MenuItem item = myToolbar.getMenu().findItem(R.id.state);
+                        item.getIcon().setTint(Color.DKGRAY);
                     }
                 });
                 handler.postDelayed(this, 1000);
