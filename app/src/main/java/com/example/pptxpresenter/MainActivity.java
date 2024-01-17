@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("http://192.168.0.111:10050/") // 83.69.213.178
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
         sharedPref = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE);
         user = sharedPref.getString(getString(R.string.user_name_key), "None");
         serverUrl = sharedPref.getString(getString(R.string.server_url_key), "None");
@@ -45,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
             serverUrl = "http://127.0.0.1:10050/";
         }
         retrofitInstance = new Retrofit.Builder()
-                .baseUrl(serverUrl) // 83.69.213.178 // "http://192.168.0.111:10050/"
+                .baseUrl(serverUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         restService = retrofitInstance.create(RestAPI.class);

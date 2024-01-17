@@ -7,6 +7,11 @@
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="1dp" >
 
+    <TextView
+        android:id="@+id/UsernameLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name" />
     <EditText
         android:id="@+id/userNameText"
         android:layout_width="match_parent"
@@ -15,6 +20,12 @@
         android:inputType="text"
         android:text="@string/name"
         android:autofillHints="Enter your name" />
+
+    <TextView
+        android:id="@+id/UrlLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/server_url" />
     <EditText
         android:id="@+id/serverUrlText"
         android:layout_width="match_parent"
