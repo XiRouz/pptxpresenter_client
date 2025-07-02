@@ -14,4 +14,7 @@ public interface RestAPI {
     @GET("{user}/hb")
     Call<ServerAns> heartBeat(@Path("user") String user);
 
+    @GET("{user}/playdemovideo")
+    Call<ServerAns> playVideo(@Path("user") String user);
+
 }

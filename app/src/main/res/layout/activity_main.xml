@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/prev_button_caption"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/playVideo"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
@@ -33,10 +33,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/next_button_caption"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/playVideo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+
+    <Button
+        android:onClick="pressButton"
+        android:id="@+id/playVideo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/play_demo_video"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
