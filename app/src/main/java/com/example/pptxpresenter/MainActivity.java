@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.URLUtil;
 
+import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
             public void run() {
                 restService.heartBeat(user).enqueue(new Callback<ServerAns>() {
                     @Override
-                    public void onResponse(Call<ServerAns> call, Response<ServerAns> response) {
+                    public void onResponse(@NonNull Call<ServerAns> call, @NonNull Response<ServerAns> response) {
                         int color = Color.DKGRAY;
                         if (response.body() != null) {
                             switch (response.body().message) {
@@ -68,13 +70,13 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
                             }
                         }
                         MenuItem item = myToolbar.getMenu().findItem(R.id.state);
-                        item.getIcon().setTint(color);
+                        Objects.requireNonNull(item.getIcon()).setTint(color);
                     }
 
                     @Override
-                    public void onFailure(Call<ServerAns> call, Throwable t) {
+                    public void onFailure(@NonNull Call<ServerAns> call, @NonNull Throwable t) {
                         MenuItem item = myToolbar.getMenu().findItem(R.id.state);
-                        item.getIcon().setTint(Color.DKGRAY);
+                        Objects.requireNonNull(item.getIcon()).setTint(Color.DKGRAY);
                     }
                 });
                 handler.postDelayed(this, 1000);
@@ -111,12 +113,12 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
         if (id == R.id.nextButton) {
             restService.nextSlide(user).enqueue(new Callback<ServerAns>() {
                 @Override
-                public void onResponse(Call<ServerAns> call, Response<ServerAns> response) {
+                public void onResponse(@NonNull Call<ServerAns> call, @NonNull Response<ServerAns> response) {
 
                 }
 
                 @Override
-                public void onFailure(Call<ServerAns> call, Throwable t) {
+                public void onFailure(@NonNull Call<ServerAns> call, @NonNull Throwable t) {
 
                 }
             });
@@ -124,12 +126,24 @@ public class MainActivity extends AppCompatActivity implements UserNameDialogFra
         else if (id == R.id.prevButton) {
             restService.prevSlide(user).enqueue(new Callback<ServerAns>() {
                 @Override
-                public void onResponse(Call<ServerAns> call, Response<ServerAns> response) {
+                public void onResponse(@NonNull Call<ServerAns> call, @NonNull Response<ServerAns> response) {
 
                 }
 
                 @Override
-                public void onFailure(Call<ServerAns> call, Throwable t) {
+                public void onFailure(@NonNull Call<ServerAns> call, @NonNull Throwable t) {
+
+                }
+            });
+        } else if (id == R.id.playVideo) {
+            restService.playVideo(user).enqueue(new Callback<ServerAns>() {
+                @Override
+                public void onResponse(@NonNull Call<ServerAns> call, @NonNull Response<ServerAns> response) {
+
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<ServerAns> call, @NonNull Throwable t) {
 
                 }
             });
